@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Good Luck Drive In",
+      "hasCanvas": false,
+      "bodyTextLen": 3091,
+      "bodyTextHash": "3cff236b2bf5d74d129bd2fa2e12bb837e87dbfff0e68cc97c62ee6b399a874f",
+      "bodyTextPrefix": "GOOD LUCK DRIVE IN · OAK CLIFF MENU STORY VISIT FULL MENU Call t",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Good Luck Drive In",
+      "hasCanvas": false,
+      "bodyTextLen": 3029,
+      "bodyTextHash": "d93fd15c4106c3bdcca437642e8495d470974f8614de01b5664b894979bf975e",
+      "bodyTextPrefix": "GOOD LUCK OAK CLIFF · WINDOW SERVICE · TWO DECADES GOOD LUCK DRI",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

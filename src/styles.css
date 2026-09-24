@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0a08;
+  --color-surface: #161310;
+  --color-raised: #1e1914;
+  --color-fg: #f3ead8;
+  --color-muted: #b8a894;
+  --color-ember: #e85d04;
+  --color-ember-deep: #c2410c;
+  --color-border: #2a241c;
+  --color-line: #3a3228;
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    min-height: 100dvh;
+    line-height: 1.55;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-bg);
+  }
+}
+
+.split-word {
+  display: inline-block;
+  animation: split-rise 0.7s var(--ease-out-expo) both;
+}
+
+@keyframes split-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.marquee-track {
+  animation: marquee-x 32s linear infinite;
+}
+
+.marquee-mask:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+  --spot-x: 50%;
+  --spot-y: 0%;
+}
+
+.spotlight-card::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--spot-x) var(--spot-y),
+    color-mix(in oklab, var(--color-ember) 18%, transparent),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.25s var(--ease-out-expo);
+  z-index: 1;
+}
+
+.spotlight-card:hover::after {
+  opacity: 1;
+}
+
+.shimmer-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    color-mix(in oklab, var(--color-fg) 45%, transparent) 50%,
+    transparent 70%
+  );
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  60%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.magnetic {
+  transition: transform 0.25s var(--ease-out-expo);
+}
+
+.hero-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in oklab, var(--color-ember) 70%, transparent),
+    transparent
+  );
+  animation: beam-fall 4.5s var(--ease-out-expo) infinite;
+  opacity: 0.55;
+}
+
+@keyframes beam-fall {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .split-word,
+  .marquee-track,
+  .shimmer-btn::before,
+  .hero-beam {
+    animation: none !important;
+  }
+  .magnetic {
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

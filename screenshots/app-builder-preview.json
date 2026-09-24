@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Good Luck Drive In",
+      "hasCanvas": false,
+      "bodyTextLen": 4071,
+      "bodyTextHash": "38280619577111c81c967f917d37d43eedf0cea7575cd97d8f11a1b03741df25",
+      "bodyTextPrefix": "GOOD LUCK DRIVE IN · OAK CLIFF MENU STORY REVIEWS VISIT FULL MEN",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Good Luck Drive In",
+      "hasCanvas": false,
+      "bodyTextLen": 4032,
+      "bodyTextHash": "0d20dbdb543b89fc84950ff7a3f54cbd09e2eaa66e51dc6a7396dd7f5c79213f",
+      "bodyTextPrefix": "GOOD LUCK 3140 E LEDBETTER DR · DALLAS 75216 · WINDOW SERVICE GO",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
